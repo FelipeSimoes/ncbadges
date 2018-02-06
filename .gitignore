@@ -57,3 +57,15 @@ typings/
 # dotenv environment variables file
 .env
 
+npm-debug.log
+npm-debug.log*
+coverage/
+npm-debug*.*
+bundle.js
+common.bundle.js
+*.bundle.js
+bundle.css
+common.bundle.css
+*.bundle.css
+*.eslintcache
+*.stylelintcache
