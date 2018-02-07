@@ -1,0 +1,18 @@
+@charset "UTF-8";
+
+// breakpoint definitions
+$xsmall:  320px;
+$small:   600px;
+$medium:  768px;
+$large:   1024px;
+$xlarge:  1200px;
+
+// MaxValues
+$xsmallMax: $small - 1;
+$smallMax:  $medium - 1;
+$mediumMax: $large - 1;
+$largeMax:  $xlarge - 1;
+$xlargeMax: 10000px;
+
+$content-max-width: 1170px;
+$component-max-width: 1200px;

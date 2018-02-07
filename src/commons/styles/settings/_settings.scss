@@ -1,0 +1,20 @@
+$content-max-width: 1170px;
+$component-max-width: 1200px;
+
+$grid-columns: 12;
+$grid-gutter: 30px;
+$half-grid-gutter: $grid-gutter / 2;
+$grid-column-width: 120px;
+$grid-max-width: $content-max-width;
+
+$z-index-media-overlay: 1;
+$z-index-floated-media: 1;
+$z-index-breadcrumb: 10000;
+$z-index-videoPlayer-play-button: 2;
+$z-index-videoPlayer: 3;
+$z-index-share-button-links: 8000;
+$z-index-share-button: 9000;
+$z-index-video-fullscreen: $z-index-breadcrumb + 1;
+$z-index-search: $z-index-breadcrumb + 1;
+$z-index-search-form: 2;
+$z-index-search-results: 1;

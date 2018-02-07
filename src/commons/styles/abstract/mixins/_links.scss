@@ -1,0 +1,53 @@
+@mixin linkhover($lineDistance: 6, $hoverColor: $color-blue-dark-orient) {
+  padding-bottom: $lineDistance - 4px;
+  border-bottom: 1px solid $hoverColor;
+}
+
+@mixin link($default: $color-blue-eastern, $hover: $color-blue-dark-orient, $active: $color-blue-dark-orient, $visited: $color-petrol-light) {
+  color: $default;
+  text-decoration: none;
+
+  span {
+    @include linkhover(6, $default);
+  }
+
+  &:active {
+    color: $active;
+  }
+
+  &.is-inactive {
+    color: $color-inactive;
+  }
+
+  &:visited {
+    color: $visited;
+
+    span {
+      border-bottom-color: $visited;
+    }
+  }
+
+  &:hover {
+    color: $hover;
+
+    span {
+      @include linkhover(6, $hover);
+    }
+  }
+}
+
+@mixin link-dark() {
+  @include link($color-snow, $color-snow, $color-snow, $color-grey-alternative);
+}
+
+@mixin iconlink($default: $color-blue-eastern, $hover: $color-blue-dark-orient, $active: $color-blue-dark-orient, $visited: $color-petrol-light) {
+  @include link($default, $hover, $active, $visited);
+
+  span {
+    border-bottom: 1px solid transparent;
+  }
+
+  &:before {
+    padding-right: 8px;
+  }
+}

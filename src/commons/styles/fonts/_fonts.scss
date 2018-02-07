@@ -1,0 +1,31 @@
+@charset "UTF-8";
+
+@font-face {
+  font-family: 'Siemens Sans Roman';
+  src: url('./setfonts/sisan03.eot?#iefix');
+  src:
+    url('./setfonts/sisan03.eot?#iefix') format('eot'),
+    url('./setfonts/sisan03.woff2') format('woff2'),
+    url('./setfonts/sisan03.woff') format('woff'),
+    url('./setfonts/sisan03.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Siemens Sans Bold';
+  src: url('./setfonts/sisan06.eot?#iefix');
+  src:
+    url('./setfonts/sisan06.eot?#iefix') format('eot'),
+    url('./setfonts/sisan06.woff2') format('woff2'),
+    url('./setfonts/sisan06.woff') format('woff'),
+    url('./setfonts/sisan06.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Siemens Sans Black';
+  src: url('./setfonts/sisan08.eot?#iefix');
+  src:
+    url('./setfonts/sisan08.eot?#iefix') format('eot'),
+    url('./setfonts/sisan08.woff2') format('woff2'),
+    url('./setfonts/sisan08.woff') format('woff'),
+    url('./setfonts/sisan08.ttf') format('truetype');
+}

@@ -1,0 +1,113 @@
+@charset "UTF-8";
+@import 'variables.scss';
+@import 'grid/grid.scss';
+@import 'icons/icon';
+
+html,
+body {
+  height: 100%;
+  min-width: 300px;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: 'Siemens Sans Roman', 'Arial', sans-serif;
+  min-width: 300px;
+
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.layout {
+  &--default {
+    margin: 0;
+  }
+}
+
+.content {
+  @include clearfix();
+}
+
+h1 {
+  font-family: $f-siemenes-sans-roman;
+  font-size: 38px;
+  line-height: 44px;
+
+  //@include breakpoint($large) {
+  @media (min-width: 1024px) {
+    font-size: 48px;
+    line-height: 54px;
+  }
+}
+
+h2 {
+  font-family: $f-siemenes-sans-bold;
+  font-size: 32px;
+  line-height: 38px;
+}
+
+h3 {
+  font-family: $f-siemenes-sans-bold;
+  font-size: 26px;
+  line-height: 32px;
+}
+
+h4 {
+  font-family: $f-siemenes-sans-bold;
+  font-size: 20px;
+  line-height: 26px;
+}
+
+h5 {
+  font-family: $f-siemenes-sans-bold;
+  font-size: 16px;
+  line-height: 22px;
+}
+
+p {
+  font-family: $f-siemenes-sans-roman;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  color: $color-stone-outer-space;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+
+  &:hover {
+    text-decoration: underline;
+    color: $color-blue-dark-orient;
+  }
+
+  &:active {
+    color: $color-blue-dark-orient;
+  }
+
+  &:disabled {
+    color: $color-inactive;
+  }
+}
+
+sup {
+  font-size: 1em;
+}

@@ -1,0 +1,49 @@
+@font-face {
+  font-family: 'siemens-webicons-webfont';
+  src: url('./seticons/siemens-webicons-webfont.eot');
+  src:
+    url('./seticons/siemens-webicons-webfont.eot?#iefix') format('eot'),
+    url('./seticons/siemens-webicons-webfont.woff') format('woff'),
+    url('./seticons/siemens-webicons-webfont.ttf') format('truetype'),
+    url('./seticons/siemens-webicons-webfont.svg') format('svg');
+}
+
+@mixin icon-styles {
+  position: relative;
+  font-family: 'siemens-webicons-webfont';
+  // font-size: 68%;
+  line-height: 1;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  text-decoration: none;
+  text-transform: none;
+  speak: none;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@function icon-char($filename) {
+  $char: '';
+  // <% _.each(glyphs, function(glyph) { %>
+  // @if $filename == to-lower-case("<%= glyph.fileName %>") {
+  // $char: "\<%= glyph.codePoint %>";
+  // }<% }); %>
+
+  @return $char;
+}
+
+@mixin icon($filename, $extend: false, $special: true) {
+  @if $extend {
+    @include icon-styles;
+  }
+  content: icon-char($filename);
+}
+
+[class^='icon-'],
+[class*=' icon-'] {
+  &:before {
+    @include icon-styles;
+  }
+}

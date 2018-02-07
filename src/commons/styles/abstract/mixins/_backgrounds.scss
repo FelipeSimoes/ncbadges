@@ -1,0 +1,78 @@
+@mixin backgroundColor($background, $darktheme: false) {
+  background-color: $background;
+
+  @if $darktheme {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    p,
+    div {
+      color: $color-snow;
+    }
+
+    .copy,
+    .linklist {
+      a:not(.iconlink) {
+        @include link-dark();
+      }
+
+      a.iconlink {
+        @include link-dark();
+
+        span {
+          border-bottom: 1px solid transparent;
+        }
+      }
+    }
+  }
+}
+
+@mixin backgroundPetrolGradient() {
+  background: petrolgradient();
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  p,
+  div {
+    color: $color-snow;
+  }
+
+  .copy {
+    a:not(.iconlink) {
+      @include link-dark();
+    }
+
+    a.iconlink {
+      @include link-dark();
+
+      span {
+        border-bottom: 1px solid transparent;
+      }
+    }
+  }
+}
+
+@function petrolgradient($opacity: 1) {
+  $t: 1 - $opacity;
+  @if $t > 0 {
+    @return linear-gradient(to right, transparentize($color-petrol-gradient-1, $t) 0%, transparentize($color-petrol-gradient-2, $t) 50%, transparentize($color-petrol-gradient-3, $t) 83%, transparentize($color-petrol-gradient-4, $t) 100%);
+  }
+  @else {
+    @return linear-gradient(to right, $color-petrol-gradient-1 0%, $color-petrol-gradient-2 50%, $color-petrol-gradient-3 83%, $color-petrol-gradient-4 100%);
+  }
+}
+
+@mixin darkBackgroundAdjustments() {
+  .section--colorTheme4 &,
+  .section--colorTheme5 &,
+  .section--colorTheme6 &,
+  .section--colorTheme7 &,
+  .section--colorTheme8 & {
+    @content;
+  }
+}

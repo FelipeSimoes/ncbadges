@@ -1,0 +1,62 @@
+{
+  "name": "siemens-frontendsetup",
+  "version": "0.1.0",
+  "description": "Siemens frontend build webpack and SASS",
+  "private": true,
+  "paths": {
+    "dest":"../app/public"
+  },
+  "values": {
+    "output": "bundle",
+    "entry": "entry"
+  },
+  "scripts": {
+    "postinstall": "cd app && npm install && DEBUG=app:* npm start",
+    "run": "DEBUG=app:* npm start",
+    "build": "npm-run-all --parallel build:*",
+    "build:js": "cross-conf-env node/node \"$npm_package_paths_tasks/js-build.js\"",
+    "build:sass": "cross-conf-env node/node \"$npm_package_paths_tasks/sass-build.js\"",
+    "lint:sass": "cross-conf-env node/node \"$npm_package_paths_tasks/lint-sass.js\"",
+    "lint:js": "cross-conf-env node/node \"$npm_package_paths_tasks/eslint-log.js\"",
+    "watch": "ttab npm run watch:js && ttab npm run watch:sass && ttab npm run watch:hotdeploy",
+    "watch:js": "ttab npm run build:js -- --watch && npm run lint:js -- --watch ",
+    "watch:sass": "ttab npm run build:sass -- --watch && cross-conf-env node/node \"$npm_package_paths_tasks/lint-sass.js\" \"--watch\"",
+    "watch:hotdeploy": "cd \"$npm_package_paths_package\" && mvn cq:hotdeploy -Pnetcentric"
+  },
+  "dependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-plugin-module-resolver": "^3.0.0",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.26.0",
+    "babel-plugin-webpack-alias": "^2.1.2",
+    "babel-preset-env": "^1.6.1",
+    "cross-conf-env": "^1.1.2",
+    "eslint": "^4.15.0",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.8.0",
+    "express": "^4.16.2",
+    "node-sass": "^4.7.2",
+    "npm-run-all": "^4.1.2",
+    "stylelint": "^8.4.0",
+    "susy": "^2.2.12",
+    "webpack": "^3.10.0"
+  },
+  "devDependencies": {
+    "@nc/stylelint-config": "^2.0.0",
+    "datauri": "^1.0.5",
+    "husky": "^0.14.3",
+    "node-notifier": "^5.2.1",
+    "ttab": "^0.6.1"
+  },
+  "optionalDependencies": {},
+  "browserslist": [
+    "last 2 versions",
+    "Explorer >= 11",
+    "iOS >= 9",
+    "Android >= 5"
+  ],
+  "engines": {
+    "node": "^8.9.4"
+  },
+  "license": "UNLICENSED"
+}
